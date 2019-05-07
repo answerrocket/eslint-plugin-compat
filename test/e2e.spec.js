@@ -381,6 +381,19 @@ ruleTester.run('compat', rule, {
       ]
     },
     {
+      code: 'const x = new URL(); x.searchParams',
+      settings: {
+        browsers: ['chrome 48', 'safari 10', 'firefox 28', 'edge 15']
+      },
+      errors: [
+        {
+          message:
+            'URL.searchParams is not supported in Safari 10, Firefox 28, Chrome 48, Edge 15',
+          type: 'MemberExpression'
+        }
+      ]
+    },
+    {
       code: 'performance.now()',
       settings: { browsers: ['ie 9'] },
       errors: [

@@ -236,6 +236,12 @@ const CanIUseProvider: Array<Node> = [
     astNodeType: 'NewExpression',
     object: 'URLSearchParams'
   },
+  {
+    caniuseId: 'urlsearchparams',
+    astNodeType: 'MemberExpression',
+    constructor: 'URL',
+    property: 'searchParams'
+  },
   // performance.now()
   {
     caniuseId: 'high-resolution-time',
